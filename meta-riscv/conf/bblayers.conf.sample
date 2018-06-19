@@ -6,12 +6,12 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  ${TOPDIR}/../meta \
-  ${TOPDIR}/../meta-yocto \
-  ${TOPDIR}/../meta-yocto-bsp \
-  ${TOPDIR}/../meta-riscv \
+  ${TOPDIR}/../riscv-poky/meta \
+  ${TOPDIR}/../riscv-poky/meta-yocto \
+  ${TOPDIR}/../riscv-poky/meta-yocto-bsp \
+  ${TOPDIR}/../riscv-poky/meta-riscv \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
-  ${TOPDIR}/../meta \
-  ${TOPDIR}/../meta-yocto \
+  ${TOPDIR}/../riscv-poky/meta \
+  ${TOPDIR}/../riscv-poky/meta-yocto \
   "

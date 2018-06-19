@@ -24,7 +24,8 @@ IMAGE_INSTALL += "gcc binutils glibc glibc-dev libgcc libgcc-dev libstdc++ libst
 IMAGE_INSTALL += "cmake boost python-pip python-setuptools python-cython python-six python-pytest python-pandas"
 IMAGE_INSTALL += "jemalloc apache-arrow python-pyarrow"
 IMAGE_INSTALL += "redis python-redis python-cloudpickle python-click python-funcsigs python-psutil python-colorama"
-IMAGE_INSTALL += "python-ray python-flatbuffers"
+#IMAGE_INSTALL += "python-ray python-flatbuffers"
+IMAGE_INSTALL += "python-flatbuffers"
 IMAGE_INSTALL += ""
 
 IMAGE_LINGUAS = " "
