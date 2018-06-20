@@ -10,6 +10,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../riscv-poky/meta-yocto \
   ${TOPDIR}/../riscv-poky/meta-yocto-bsp \
   ${TOPDIR}/../riscv-poky/meta-riscv \
+  ${TOPDIR}/../riscv-poky/meta-nexell \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
   ${TOPDIR}/../riscv-poky/meta \

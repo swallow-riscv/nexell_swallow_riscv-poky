@@ -33,3 +33,6 @@ IMAGE_LINGUAS = " "
 LICENSE = "MIT"
 
 IMAGE_ROOTFS_SIZE ?= "719820"
+
+#Nexell append for example application
+IMAGE_INSTALL_append = "packagegroup-nexell"
