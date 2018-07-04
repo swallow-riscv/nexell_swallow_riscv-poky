@@ -14,7 +14,7 @@ IMAGE_FSTYPES_forcevariable = "cpio.gz"
 KERNELDEPMODDEPEND = ""
 USE_DEPMOD = "0"
 PACKAGE_INSTALL = "packagegroup-core-boot ${ROOTFS_BOOTSTRAP_INSTALL} ${CORE_IMAGE_EXTRA_INSTALL}"
-PACKAGE_INSTALL += " busybox e2fsprogs bash packagegroup-nexell "
+PACKAGE_INSTALL += " busybox e2fsprogs bash packagegroup-nexell mingetty"
 
 inherit extrausers
 EXTRA_USERS_PARAMS = "\
@@ -22,3 +22,4 @@ EXTRA_USERS_PARAMS = "\
     "
 
 inherit core-image
+inherit post-process-nexell
