@@ -6,8 +6,16 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
+NEXELL_LIBS = " \
+nx-allocator \
+nx-scaler \
+nx-v4l2 \
+"
+
 RDEPENDS_${PN} = " \
     helloworld-nexell \
     android-tools-nexell \
     bash-completion \
+    ${NEXELL_LIBS} \
+    testsuite \
 "
