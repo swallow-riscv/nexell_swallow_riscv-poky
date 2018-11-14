@@ -259,6 +259,6 @@ CONF_VERSION = "1"
 #TCMODE = "external-riscv-linux"
 TCLIBC = "glibc"
 
-TOOLCHAIN_PATH = "${TOPDIR}/../riscv-toolchain"
+TOOLCHAIN_PATH = "${HOME}/riscv-toolchain"
 TOOLCHAIN_SYSPATH = "$(TOOLCHAIN_PATH)"
 EXTERNAL_TOOLCHAIN = "$(TOOLCHAIN_PATH)"
