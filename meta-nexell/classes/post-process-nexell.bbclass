@@ -11,15 +11,18 @@ postprocess_function() {
 	rm -rf run
 	ln -sf tmp run
 
-	#---bootscript.sh create---
-	echo "#!/bin/sh" > ./etc/bootscript.sh
-	echo "mount -t devtmpfs none /dev" >> etc/bootscript.sh
-	echo "mount -t proc none /proc" >> etc/bootscript.sh
-	echo "mount -t sysfs none /sys" >> etc/bootscript.sh
+	# #---bootscript.sh create---
+	# echo "#!/bin/sh" > ./etc/bootscript.sh
+	# echo "mount -t devtmpfs none /dev" >> etc/bootscript.sh
+	# echo "mount -t proc none /proc" >> etc/bootscript.sh
+	# echo "mount -t sysfs none /sys" >> etc/bootscript.sh
 
 	#ping permission change
 	echo "inet:x:3003:root"    >> etc/group
 	echo "net_raw:x:3004:root" >> etc/group
+
+	#busybox-mdev automount
+        echo "mmcblk[0-9]p[0-9] 0:0 660 */etc/mdev/mdev-mount.sh" >> etc/mdev.conf
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "postprocess_function;"
