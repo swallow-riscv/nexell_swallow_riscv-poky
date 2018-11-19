@@ -24,6 +24,9 @@ postprocess_function() {
 	#busybox-mdev automount
 	echo "mmcblk[0-9]p[0-9] 0:0 660 */etc/mdev/mdev-mount.sh" >> etc/mdev.conf
 	echo "/dev/mmcblk0p2       /run/media/mmcblk0p2          auto       defaults,sync,noauto  0  0" >> etc/fstab
+
+        #network
+        cp -a ${BASE_WORKDIR}/../../../riscv-poky/meta-nexell/recipes-devtools/network/files/interfaces etc/network/
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "postprocess_function;"
