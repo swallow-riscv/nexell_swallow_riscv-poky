@@ -34,5 +34,5 @@ LICENSE = "MIT"
 
 IMAGE_ROOTFS_SIZE ?= "719820"
 
-#Nexell append for example application
+# Nexell packages
 IMAGE_INSTALL_append = "packagegroup-nexell"
