@@ -1,7 +1,4 @@
 #!/bin/sh
-
-mount -t configfs none /sys/kernel/config
-
 GADGET_DIR=/sys/kernel/config/usb_gadget/g1
 SERIAL_PATH=/proc/device-tree/serial-number
 
@@ -36,7 +33,6 @@ fi
 echo 120 > ${GADGET_DIR}/configs/c.1/MaxPower
 echo "Conf 1" > ${GADGET_DIR}/configs/c.1/strings/0x409/configuration
 
-
 #Create Adb FunctionFS function
 #And link it to the gadget configuration
 if ! [ -d "${GADGET_DIR}/functions/ffs.adb" ]; then
@@ -46,15 +42,15 @@ fi
 
 if ! [ -d "/dev/usb-ffs/adb" ]; then
 	mkdir -p /dev/usb-ffs/adb
-	mount -o uid=2000,gid=2000 -t functionfs adb /dev/usb-ffs/adb
 fi
+mount -o uid=2000,gid=2000 -t functionfs adb /dev/usb-ffs/adb
 
 #Start adbd application
 /usr/bin/adbd&
 echo $! > /run/adbd.pid
 sleep 2
 
-if [ "`cat ${GADGET_DIR}/UDC`" == "c0040000.dwc2otg" ]; then
+if [ "`cat ${GADGET_DIR}/UDC`" == "20d00000.dwc2otg" ]; then
 	echo "" > ${GADGET_DIR}/UDC
 fi
-echo c0040000.dwc2otg > ${GADGET_DIR}/UDC
+echo 20d00000.dwc2otg > ${GADGET_DIR}/UDC
