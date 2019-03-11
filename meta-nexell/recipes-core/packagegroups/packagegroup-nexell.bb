@@ -18,4 +18,5 @@ RDEPENDS_${PN} = " \
     bash-completion \
     ${NEXELL_LIBS} \
     testsuite \
+    ffmpeg \
 "
