@@ -1,0 +1,26 @@
+From 02a630ded194709addec7f25ac4f0f6acb7fe8b9 Mon Sep 17 00:00:00 2001
+From: suker <suker@nexell.co.kr>
+Date: Mon, 11 Mar 2019 17:09:07 +0900
+Subject: [PATCH] build error fixed for ffmpeg
+
+---
+ sysdeps/unix/sysv/linux/riscv/sys/ucontext.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h b/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
+index 693b6f7..6173376 100644
+--- a/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
++++ b/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
+@@ -59,7 +59,9 @@ typedef struct ucontext
+     struct ucontext *uc_link;
+     stack_t uc_stack;
+     sigset_t uc_sigmask;
++#ifdef __USE_MISC //suker modified 2019.03.11
+     mcontext_t uc_mcontext;
++#endif
+   } ucontext_t;
+ 
+ #endif /* sys/ucontext.h */
+-- 
+2.7.4
+

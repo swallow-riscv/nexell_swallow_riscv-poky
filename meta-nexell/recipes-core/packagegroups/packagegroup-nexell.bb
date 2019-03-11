@@ -19,4 +19,5 @@ RDEPENDS_${PN} = " \
     ${NEXELL_LIBS} \
     testsuite \
     mtd-utils \
+    ffmpeg \
 "
