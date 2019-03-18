@@ -10,6 +10,7 @@ NEXELL_LIBS = " \
 nx-allocator \
 nx-scaler \
 nx-v4l2 \
+nx-video-api \
 "
 
 RDEPENDS_${PN} = " \
@@ -18,5 +19,6 @@ RDEPENDS_${PN} = " \
     bash-completion \
     ${NEXELL_LIBS} \
     testsuite \
+    simple-enc-test \
     mtd-utils \
 "
