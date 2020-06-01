@@ -20,5 +20,6 @@ RDEPENDS_${PN} = " \
     ${NEXELL_LIBS} \
     testsuite \
     simple-enc-test \
+	nx-camera-enc \
     mtd-utils \
 "
