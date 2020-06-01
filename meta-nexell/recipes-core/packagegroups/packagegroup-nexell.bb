@@ -21,4 +21,5 @@ RDEPENDS_${PN} = " \
     testsuite \
     simple-enc-test \
     mtd-utils \
+    nx-camera-enc \
 "
