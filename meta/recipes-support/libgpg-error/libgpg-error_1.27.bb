@@ -14,6 +14,7 @@ SECTION = "libs"
 UPSTREAM_CHECK_URI = "https://gnupg.org/download/index.html"
 SRC_URI = "${GNUPG_MIRROR}/libgpg-error/libgpg-error-${PV}.tar.bz2 \
            file://pkgconfig.patch \
+           file://Add-lock-obj-pub-file-for-riscv64-unknown-linux-gnu.patch \
 	  "
 
 SRC_URI[md5sum] = "5217ef3e76a7275a2a3b569a12ddc989"
