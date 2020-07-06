@@ -1,0 +1,24 @@
+diff --git a/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h b/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
+index 693b6f7..d88b7b7 100644
+--- a/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
++++ b/sysdeps/unix/sysv/linux/riscv/sys/ucontext.h
+@@ -1,5 +1,5 @@
+ /* struct ucontext definition, RISC-V version.
+-   Copyright (C) 1997-2017 Free Software Foundation, Inc.  
++   Copyright (C) 1997-2017 Free Software Foundation, Inc.
+    This file is part of the GNU C Library.
+ 
+    The GNU C Library is free software; you can redistribute it and/or
+@@ -46,11 +46,11 @@ typedef greg_t gregset_t[NGREG];
+ 
+ /* Container for floating-point state.  */
+ typedef union __riscv_fp_state fpregset_t;
++#endif
+ 
+ /* Context to describe whole processor state.  */
+ typedef struct sigcontext mcontext_t;
+ 
+-#endif
+ 
+ /* Userlevel context.  */
+ typedef struct ucontext
