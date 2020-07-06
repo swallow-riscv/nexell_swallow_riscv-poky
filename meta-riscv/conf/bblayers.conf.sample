@@ -11,8 +11,19 @@ BBLAYERS ?= " \
   ${TOPDIR}/../riscv-poky/meta-yocto-bsp \
   ${TOPDIR}/../riscv-poky/meta-riscv \
   ${TOPDIR}/../riscv-poky/meta-nexell \
+  ${TOPDIR}/../meta-openembedded/meta-oe \
+  ${TOPDIR}/../meta-openembedded/meta-networking \
+  ${TOPDIR}/../meta-openembedded/meta-python \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
   ${TOPDIR}/../riscv-poky/meta \
   ${TOPDIR}/../riscv-poky/meta-yocto \
   "
+
+BBMASK += "python-pyqt"
+BBMASK += "ypbind-mt"
+BBMASK += "yp-tools"
+BBMASK += "${TOPDIR}/../meta-openembedded/meta-oe/recipes-support/maliit "
+BBMASK += "${TOPDIR}/../meta-openembedded/meta-oe/recipes-qt "
+BBMASK += "${TOPDIR}/../meta-openembedded/meta-oe/recipes-navigation "
+BBMASK += "${TOPDIR}/../meta-openembedded/meta-oe/recipes-extended "
