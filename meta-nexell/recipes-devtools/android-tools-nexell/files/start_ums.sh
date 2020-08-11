@@ -30,7 +30,7 @@ echo "Conf 1" > ${GADGET_DIR}/configs/c.1/strings/0x409/configuration
 if ! [ -d "${GADGET_DIR}/functions/mass_storage.ms0" ]; then
         mkdir ${GADGET_DIR}/functions/mass_storage.ms0
 	echo 1 > ${GADGET_DIR}/functions/mass_storage.ms0/lun.0/removable
-	echo /dev/mmcblk1p1 > ${GADGET_DIR}/functions/mass_storage.ms0/lun.0/file
+	echo /dev/mmcblk0p3 > ${GADGET_DIR}/functions/mass_storage.ms0/lun.0/file
 	ln -s ${GADGET_DIR}/functions/mass_storage.ms0 ${GADGET_DIR}/configs/c.1/mass_storage.ms0
 fi
 
