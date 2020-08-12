@@ -18,7 +18,7 @@ IMAGE_INSTALL += "python-numpy python-subprocess python-ctypes python-html pytho
 IMAGE_INSTALL += "gcc binutils glibc glibc-dev libgcc libgcc-dev libstdc++ libstdc++-dev"
 
 #Samba
-IMAGE_INSTALL_append  += "samba "
+IMAGE_INSTALL_append  += "samba memtester "
 
 
 # Networking
