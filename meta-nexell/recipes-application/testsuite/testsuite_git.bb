@@ -27,8 +27,64 @@ do_compile() {
 	cd ${S}/scaler_test_file
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
 	#camera_test
 	cd ${S}/cam_test
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#adc
+	cd ${S}/adc
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#gpio
+	cd ${S}/gpio
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#i2c
+	cd ${S}/i2c
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#mmc
+	cd ${S}/mmc
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#pwm
+	cd ${S}/pwm
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#spi
+	cd ${S}/spi
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#uart
+	cd ${S}/uart
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#watchdog
+	cd ${S}/watchdog
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#cpu
+	cd ${S}/cpu
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#sfr
+	cd ${S}/sfr
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#main
+	cd ${S}/main
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
 }
@@ -40,8 +96,42 @@ do_install() {
 	#scaler_test
 	install -m 0755 ${S}/scaler_test_file/scaler-test-file ${D}${bindir}
 	install -m 0755 ${S}/scaler_test_file/input.yuv ${D}${bindir}
+
 	#camera_test
 	install -m 0755 ${S}/cam_test/cam_test ${D}${bindir}
+
+	#adc_test
+	install -m 0755 ${S}/adc/adc-test ${D}${bindir}
+
+	#gpio-test
+	install -m 0755 ${S}/gpio/gpio-test ${D}${bindir}
+
+	#i2c-test
+	install -m 0755 ${S}/i2c/i2c-test ${D}${bindir}
+
+	#mmc-test
+	install -m 0755 ${S}/mmc/mmc-test ${D}${bindir}
+
+	#pwm-test
+	install -m 0755 ${S}/pwm/pwm-test ${D}${bindir}
+
+	#spi-test
+	install -m 0755 ${S}/spi/spi-test ${D}${bindir}
+
+	#uart-test
+	install -m 0755 ${S}/uart/uart-test ${D}${bindir}
+
+	#watchdog-test
+	install -m 0755 ${S}/watchdog/watchdog-test ${D}${bindir}
+
+	#cpuinfo-test
+	install -m 0755 ${S}/cpu/cpuinfo-test ${D}${bindir}
+
+	#sfr-test
+	install -m 0755 ${S}/sfr/sfr-test ${D}${bindir}
+
+	#test-main
+	install -m 0755 ${S}/main/test-main ${D}${bindir}
 }
 
 INSANE_SKIP_${PN} = "ldflags"
