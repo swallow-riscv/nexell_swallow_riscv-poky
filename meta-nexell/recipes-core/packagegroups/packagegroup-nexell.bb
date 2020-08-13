@@ -16,10 +16,12 @@ nx-video-api \
 RDEPENDS_${PN} = " \
     helloworld-nexell \
     android-tools-nexell \
+    keti-prebuilt \
     bash-completion \
     ${NEXELL_LIBS} \
     testsuite \
     simple-enc-test \
-	nx-camera-enc \
+    nx-camera-enc \
     mtd-utils \
+    cifs-utils \
 "
