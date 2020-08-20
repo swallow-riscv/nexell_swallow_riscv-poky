@@ -22,6 +22,7 @@ RDEPENDS_${PN} = " \
     testsuite \
     simple-enc-test \
     nx-camera-enc \
+    nx-enc-filter \
     mtd-utils \
     cifs-utils \
 "
