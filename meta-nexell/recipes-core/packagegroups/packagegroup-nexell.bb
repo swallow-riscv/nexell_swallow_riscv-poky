@@ -25,4 +25,5 @@ RDEPENDS_${PN} = " \
     nx-enc-filter \
     mtd-utils \
     cifs-utils \
+    byda-rad \
 "
