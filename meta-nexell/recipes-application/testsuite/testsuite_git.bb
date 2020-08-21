@@ -87,6 +87,11 @@ do_compile() {
 	cd ${S}/main
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
 	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
+
+	#dhrystone
+	cd ${S}/dhrystone
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} CC="$CC" clean
+	oe_runmake CROSS_COMPILE=${TARGET_PREFIX} INCLUDES="-I${STAGING_INCDIR}" LDFLAGS="-L${STAGING_LIBDIR}" CC="$CC"
 }
 
 do_install() {
@@ -132,6 +137,9 @@ do_install() {
 
 	#test-main
 	install -m 0755 ${S}/main/test-main ${D}${bindir}
+
+	#dhrystone
+	install -m 0755 ${S}/dhrystone/dhrystone ${D}${bindir}
 }
 
 INSANE_SKIP_${PN} = "ldflags"
